@@ -2,32 +2,35 @@
         --primary-background-color: #FFFFFF;;
         --secondary-background-color: #F5F4FA;
         --footer-background-color: #2F303A;
+        --work-card-overlay-background: rgba(33, 150, 243, 0.9);
         --hero-gradient: rgba(47, 48, 58, 0.4);
+        --proposition-wrapper-background-color: rgba(47, 48, 58, 0.8);
+        --backdrop-overlay: rgba(0, 0, 0, 0.2);
+        --join-soc-link: rgba(255, 255, 255, 0.1);
 
         --primary-text-color: #757575;
         --secondary-text-color: #212121;
         --accent-color: #2196F3;
-        --primary-button-hover-color: #188CE8;
-
         --logo-text-color: #000000;
         --primary-white-color: #FFFFFF;
         --secondary-white-color: rgba(255, 255, 255, 0.6);
+        --placeholder-comment: rgba(117, 117, 117, 0.5);
 
         --header-border-bootom: #ECECEC;
-        --team-card-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
-        --portfolio-card-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06), 1px 4px 6px rgba(0, 0, 0, 0.16);
-        --secondary-button-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08), 0px 2px 2px rgba(0, 0, 0, 0.12);
         --clients-border-color: #AFB1B8;
         --card-border-color: rgba(238, 238, 238, 1);
-        --join-soc-link: rgba(255, 255, 255, 0.1);
+        --email-input-border-color: rgba(255, 255, 255, 0.3);
+        --modal-form-input: rgba(33, 33, 33, 0.2);
+         
+        --team-card-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
+        --modal-send-button-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
 
-        --backdrop-overlay: rgba(0, 0, 0, 0.2);
+        --portfolio-card-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06), 1px 4px 6px rgba(0, 0, 0, 0.16);
+        --secondary-button-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08), 0px 2px 2px rgba(0, 0, 0, 0.12);
+      
+        --primary-button-hover-color: #188CE8;
         --border-close-button-color: rgba(0, 0, 0, 0.1);
         
-        --proposition-wrapper-background-color: rgba(47, 48, 58, 0.8);
-
-        --work-card-overlay-background: rgba(33, 150, 243, 0.9);
-
         --main-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
     }
 
@@ -567,8 +570,7 @@ body {
 /* Футер */
 
 .footer {
-    padding-top: 60px;
-    padding-bottom: 60px;
+    padding: 60px 215px;
     background-color: var(--footer-background-color);
 }
 
@@ -616,11 +618,12 @@ body {
     flex-direction: column;
     align-items: flex-start;
     margin-left: 70px;
+    margin-right: 93px;
 
     text-align: center;
 }
 
-.join-title {
+.join-title, .submit-title {
     margin-top: 0;
     margin-bottom: 20px;
 
@@ -667,6 +670,80 @@ body {
 .join-soc-link:focus {
     background-color: var(--accent-color);}
 
+
+.footer-form {
+    display: flex;
+   }
+
+.email-input {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    padding-left: 16px;
+    margin-right: 12px;
+    
+    width: 358px;
+    height: 50px;
+    
+    border: 1px solid var(--email-input-border-color);
+    border-radius: 4px;
+
+    background-color: transparent;
+
+    outline: none;
+
+    transition: border-color 250ms var(--main-timing-function);
+    }
+
+.email-input:focus, .email-input:hover {
+    border-color: var(--accent-color);
+}
+
+ .email-input::placeholder {
+    
+        font-size: 16px;
+        line-height: 1.25;
+
+        color: var(--secondary-white-color);}
+
+
+.submit-button {
+        display: flex;
+        align-items: center;
+        padding: 10px 32px 10px 28px;
+    
+        min-width: 200px;
+    
+        font-family: inherit;
+        font-style: inherit;
+        font-weight: 700;
+        font-size: 16px;
+        line-height: 1.88;
+        letter-spacing: 0.06em;
+    
+    
+        color: var(--primary-white-color);
+        background-color: var(--accent-color);
+        border-color: transparent;
+    
+        border-radius: 4px;
+        cursor: pointer;
+    
+        transition: color 250ms var(--main-timing-function), background-color 250ms var(--main-timing-function), border-color 250ms var(--main-timing-function);
+        ;
+    }
+    
+    .submit-button:hover,
+    .submit-button:focus {
+        color: var(--primary-white-color);
+        background-color: var(--accent-color);
+        border-color: var(--accent-color);
+}
+
+.submit-button-icon {
+
+    fill: var(--primary-white-color);
+    margin-left: 8px;
+}
 
 /* Сторінка портфоліо */
 
@@ -843,16 +920,14 @@ body {
 }
 
 .modal {
-    display: flex;
-
     position: absolute;
     top: 50%;
     left: 50%;
     
     width: 528px;
-    height: 581px;
+    min-height: 581px;
 
-    padding: 8px;
+    padding: 40px 8px 40px;
 
     background-color: var(--primary-background-color);
 
@@ -862,9 +937,11 @@ body {
 }
 
 .close-modal {
-   display: inline-block;
-   margin-left: auto;
-   
+    position: absolute;
+
+    top: 8px;
+    right: 8px;
+    
     padding: 6px;
 
     width: 30px;
@@ -877,9 +954,210 @@ body {
     color: var(--logo-text-color);
 
     cursor: pointer;
-
 }
 
 .close-modal-icon {
     fill: currentColor;
+
+    transition: fill 250ms var(--main-timing-function);
 }
+
+.close-modal-icon:hover, .close-modal-icon:focus {
+    fill: var(--accent-color);
+
+}
+
+.action-description {
+    margin-top: 0;
+    margin-bottom: 12px;
+    padding: 0;
+
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 1.15;
+    text-align: center;
+
+    color: var(--secondary-text-color);
+}
+
+.modal-form {
+    display: flex;
+    flex-direction: column;
+    margin-left: auto;
+    margin-right: auto;
+    width: 448px;
+}
+
+.modal-form-field {
+    margin-bottom: 10px;
+}
+
+.input-wrapper {
+    position: relative;
+}
+
+.modal-form-label {
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 1.17;
+
+    letter-spacing: 0.01em;
+    
+     color: var(--primary-text-color);
+}
+
+.modal-form-input {
+    width: 100%;
+    height: 40px;
+
+    padding: 11px 8px 11px 40px;
+    margin-top: 4px;
+
+    border: 1px solid var(--modal-form-input);
+    border-radius: 4px;
+
+    outline: none;
+
+    transition: border-color 250ms var(--main-timing-function);
+
+}
+
+.modal-form-input:focus,
+.modal-form-input:hover,
+.modal-form-comment textarea:hover,
+.modal-form-comment textarea:focus
+ {
+    border: 1px solid var(--accent-color);
+}
+
+.modal-form-icon {
+    position: absolute;
+    top: 50%;
+    left: 12px;
+
+    fill: var(--secondary-text-color);
+
+    transform: translateY(-50%);
+
+    transition: fill 250ms var(--main-timing-function);
+}
+
+.modal-form-comment {
+    margin-bottom: 20px;
+}
+
+.modal-form-comment textarea {
+    resize: none;
+    padding: 12px 16px;
+    margin-top: 4px;
+    width: 100%;
+    min-height: 120px;
+
+    border: 1px solid var(--modal-form-input);
+    border-radius: 4px;
+
+    outline: none;
+
+    transition: border-color 250ms var(--main-timing-function);
+}
+
+textarea::placeholder {
+
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 1.17;
+    letter-spacing: 0.01em;
+
+    color: var(--placeholder-comment);}
+
+
+.modal-form-input:focus ~ .modal-form-icon, .modal-form-input:hover ~ .modal-form-icon
+ {
+    fill: var(--accent-color);
+}
+
+.checkbox-field {
+    margin-bottom: 30px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.checbox-label {
+    display: flex;
+    align-items: center;
+
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 1.71;
+
+    letter-spacing: 0.03em;
+
+    color: var(--primary-text-color);
+}
+
+.conditions {
+    color: var(--accent-color);
+}
+
+.checkbox-input {
+    overflow: hidden;
+    position: absolute;
+    white-space: nowrap;
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    height: 1px;
+    width: 1px;
+}
+
+.icon-checkbox {
+    margin-right: 7px;
+}
+
+.checkbox-input:checked ~ .icon-checkbox {
+
+    fill: var(--accent-color);
+    background-color: var(--accent-color);
+    background-image: url(../images/iconcheck.svg);
+    background-size: contain;
+    background-origin: border-box;
+}
+
+.modal-send-button {
+    display: inline-block;
+    width: 200px;
+    height: 50px;
+    padding: 10px 52px;
+    margin-left: auto;
+    margin-right: auto;
+
+    font-family: inherit;
+    font-style: inherit;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 1.88;
+    letter-spacing: 0.06em;
+
+    background-color: var(--primary-button-hover-color);
+
+    color: var(--primary-white-color);
+
+    border-radius: 4px;
+    border-color: transparent;
+    cursor: pointer;
+
+    transition: box-shadow 250ms var(--main-timing-function);
+}
+
+.modal-send-button:hover,
+.modal-send-button:focus {
+    box-shadow: var(--modal-send-button-shadow);
+}
+
+
+
+
+
+
+
+
+
