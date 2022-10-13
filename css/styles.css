@@ -696,6 +696,7 @@ body {
 
 .email-input:focus, .email-input:hover {
     border-color: var(--accent-color);
+    color: var(--secondary-white-color);
 }
 
  .email-input::placeholder {
